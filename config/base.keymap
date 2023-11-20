@@ -153,7 +153,7 @@ ZMK_BEHAVIOR(uc_shift, macro,
 ZMK_BEHAVIOR(change_lang, macro,
     wait-ms = <0>;
     tap-ms = <1>;
-    bingings = <&tog QWERTY>
+    bindings = <&tog QWERTY>
             , <&macro_press &kp LGUI>
             , <&macro_tap &kp SPACE>
             , <&macro_release &kp LGUI>;
