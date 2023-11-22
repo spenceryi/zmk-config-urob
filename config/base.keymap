@@ -54,9 +54,9 @@
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
     ZMK_BEHAVIOR(NAME, hold_tap, \
         flavor = "balanced"; \
-        tapping-term-ms = <280>; \
+        tapping-term-ms = <250>; \
         quick-tap-ms = <QUICK_TAP_MS>; \
-        require-prior-idle-ms = <150>; \
+        require-prior-idle-ms = <120>; \
         bindings = <HOLD>, <TAP>; \
         hold-trigger-key-positions = <TRIGGER_POS>; \
         hold-trigger-on-release; \
@@ -299,11 +299,11 @@ ZMK_LAYER(fn,
 
 ZMK_LAYER(num,
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-    X_LT     ___           &kp N7        &kp N8        &kp N9        &kp AT          X_MT     &kp STAR      &kp FSLH      &kp BSLH      &kp PLUS      &kp GRAVE       X_RT
+    X_LT     ___           &kp N7        &kp N8        &kp N9        &kp PLUS        X_MT     &kp STAR      &kp FSLH      &kp BSLH      &kp AT        &kp GRAVE       X_RT
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    X_LM     &hml LSHFT N0 &hml LCTRL N4 &hml LALT N5  &hml LGUI N6  &kp HASH        X_MM     &kp EQUAL     &lpar_lt      &rpar_gt      &kp MINUS     &kp CARET       X_RM
+    X_LM     &hml LSHFT N0 &hml LCTRL N4 &hml LALT N5  &hml LGUI N6  &kp MINUS       X_MM     &kp EQUAL     &lpar_lt      &rpar_gt      &kp HASH      &kp CARET       X_RM
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    X_LB     ___           &kp N1        &kp N2        &kp N3        &kp DLLR        X_MB     &kp AMPS      &kp LBKT      &kp RBKT      &kp PRCNT     ___             X_RB
+    X_LB     ___           &kp N1        &kp N2        &kp N3        &kp PRCNT       X_MB     &kp AMPS      &kp LBKT      &kp RBKT      &kp DLLR      ___             X_RB
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
     X_LH                                               ___           ___             X_MH     ___           ___                                                       X_RH
 //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
