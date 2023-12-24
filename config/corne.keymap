@@ -129,7 +129,7 @@ ZMK_BEHAVIOR(andor_morph, mod_morph,
 // tap: shift | shift + tap: caps-word | hold: shift
 ZMK_BEHAVIOR(smart_shift, mod_morph,
     bindings = <&kp LSHFT>, <&caps_word>;
-    mods = <(MOD_RSFT)>;
+    mods = <(MOD_LSFT)>;
 )
 
 /* Combos */
@@ -144,12 +144,6 @@ ZMK_BEHAVIOR(smart_shift, mod_morph,
 #define HRC_LPAR   &hmr_lpar_lt RS(LCTRL) 0
 #define HRC_RPAR   &hmr_rpar_gt LA(LCTRL) 0
 
-ZMK_COMBO(undo,  &kp LC(Z),     LB4 LB3,     DEF QWERTY, COMBO_TERM_FAST)
-ZMK_COMBO(cut,   &kp LC(X),     LB3 LB1,     DEF QWERTY, COMBO_TERM_FAST)
-ZMK_COMBO(copy,  &kp LC(INS),   LB3 LB2,     DEF QWERTY, COMBO_TERM_FAST)
-ZMK_COMBO(paste, &kp LS(INS),   LB2 LB1,     DEF QWERTY, COMBO_TERM_FAST)
-ZMK_COMBO(bspc,  &kp BSPC,      RT1 RT2,     DEF QWERTY, COMBO_TERM_FAST)
-ZMK_COMBO(del,   &kp DEL,       RT2 RT3,     DEF QWERTY, COMBO_TERM_FAST)
 ZMK_COMBO(lpar,  HRC_LPAR,      RM1 RM2,     DEF QWERTY, COMBO_TERM_FAST)
 ZMK_COMBO(rpar,  HRC_RPAR,      RM2 RM3,     DEF QWERTY, COMBO_TERM_FAST)
 ZMK_COMBO(lbkt,  &kp LBKT,      RB1 RB2,     DEF QWERTY, COMBO_TERM_FAST)
@@ -161,13 +155,13 @@ ZMK_CONDITIONAL_LAYER(FN NAV, SYS)  // FN + NAV --> SYS
 
 ZMK_LAYER(base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-   &kp ESC       &kp Q         &kp W         &kp F         &kp P         &kp G            &kp J         &kp L         &kp U         &kp Y         &kp SQT       &kp DEL
+   &kp ESC       &kp Q         &kp W         &kp F         &kp P         &kp G            &kp J         &kp L         &kp U         &kp Y         &kp SQT       &kp BSPC
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-   &kp LSHFT     &kp A         &kp R         &kp S         &kp T         &kp D            &kp H         &kp N         &kp E         &kp I         &kp O         &smart_shift
+   &smart_shift  &kp A         &kp R         &kp S         &kp T         &kp D            &kp H         &kp N         &kp E         &kp I         &kp O         &kp RET
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
    &kp LCTRL     &kp Z         &kp X         &kp C         &kp V         &kp B            &kp K         &kp M         &comma_morph  &dot_morph    &qexcl        &kp LALT
 //╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
-                                             &kp LGUI      &mo FN        &lt NUM SPACE    &lt NAV BSPC  &kp RET       &kp TAB                                             
+                                             &kp LGUI      &lt NUM SPACE &mo FN           &mo NAV       &smart_shift  &kp TAB                                             
 //                                          ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯                                          
 )
 
@@ -185,7 +179,7 @@ ZMK_LAYER(qwerty,
 
 ZMK_LAYER(nav,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-   ___           ___           ___           ___           ___           ___              &kp PG_UP     ___           NAV_UP        ___           ___           ___
+   ___           ___           ___           ___           ___           ___              &kp PG_UP     ___           NAV_UP        ___           ___           &kp DEL
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
    ___           ___           ___           ___           ___           ___              &kp PG_DN     NAV_LEFT      NAV_DOWN      NAV_RIGHT     ___           ___
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
