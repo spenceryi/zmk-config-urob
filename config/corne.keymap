@@ -52,12 +52,12 @@
 ZMK_BEHAVIOR(mt_home, hold_tap, bindings = <&masked_home>, <&kp>; MT_CORE)
 ZMK_BEHAVIOR(mt_end,  hold_tap,  bindings = <&masked_end>, <&kp>; MT_CORE)
 
-#define NAV_LEFT  &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
-#define NAV_RIGHT &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
-#define NAV_UP    &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
-#define NAV_DOWN  &mt LC(END)  DOWN    // tap: down  | long-tap: end       of document
-#define NAV_BSPC  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
-#define NAV_DEL   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
+#define NAV_LEFT   &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
+#define NAV_RIGHT  &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
+#define NAV_UP     &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
+#define NAV_DOWN   &mt LC(END)  DOWN    // tap: down  | long-tap: end       of document
+#define NAV_BSPC   &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
+#define NAV_DEL    &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
 
 // mask CTRL when holding left/right to avoid accidental jumps to beginning/end of document
 #define MASK_MODS(NAME, MODS, BINDING) \
@@ -131,6 +131,13 @@ ZMK_BEHAVIOR(smart_shift, mod_morph,
     mods = <(MOD_LSFT)>;
 )
 
+// tap: copy | hold-tap: paste | double-tap: cut
+#define COPY_PASTE &mt LC(V) LC(C)
+ZMK_BEHAVIOR(copy_cut_paste, tap_dance,
+    tapping-term-ms = <220>;
+    bindings = <COPY_PASTE>, <LC(X)>;
+)
+
 /* Combos */
 // use require-prior-idle-ms for combos
 #undef COMBO_HOOK
@@ -190,11 +197,11 @@ ZMK_LAYER(qwerty,
 
 ZMK_LAYER(canary,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-   ___           &kp W         &kp L         &kp Y         &kp P         &kp B            &kp Z         &kp F         &kp O         &kp U         &kp SQT         ___
+   ___           &kp Q         &kp L         &kp Y         &kp P         &kp B            &kp Z         &kp F         &kp O         &kp U         &kp SQT         ___
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
    ___           &kp C         &kp R         &kp S         &kp T         &kp G            &kp M         &kp N         &kp E         &kp I         &kp A      ___
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-   ___           &kp Q         &kp J         &kp V         &kp D         &kp K            &kp X         &kp H         ___           ___           ___           ___
+   ___           &kp W         &kp J         &kp V         &kp D         &kp K            &kp X         &kp H         ___           ___           ___           ___
 //╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
                                              ___           ___           ___              ___           ___           ___
 //                                          ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯                                          
