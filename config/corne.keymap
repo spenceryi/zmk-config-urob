@@ -10,10 +10,11 @@
 
 #define DEF 0
 #define QWERTY 1
-#define NAV 2
-#define FN 3
-#define NUM 4
-#define SYS 5
+#define CANARY 2
+#define NAV 3
+#define FN 4
+#define NUM 5
+#define SYS 6
 
 #define XXX &none
 #define ___ &trans
@@ -32,7 +33,7 @@
 
 &lt {  // layer-tap config
     flavor = "balanced";
-    tapping-term-ms = <200>;
+    tapping-term-ms = <250>;
     quick-tap-ms = <QUICK_TAP_MS>;
 };
 
@@ -139,25 +140,25 @@ ZMK_BEHAVIOR(smart_shift, mod_morph,
 #define COMBO_TERM_MED 25
 #define COMBO_TERM_SLOW 30
 
-ZMK_COMBO(lpar,   &kp LPAR,      LM2 LM1,     DEF QWERTY NUM, COMBO_TERM_SLOW)
-ZMK_COMBO(rpar,   &kp RPAR,      RM1 RM2,     DEF QWERTY NUM, COMBO_TERM_SLOW)
+ZMK_COMBO(lpar,   &kp LPAR,      LM2 LM1,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(rpar,   &kp RPAR,      RM1 RM2,     DEF QWERTY NUM, COMBO_TERM_MED)
 
-ZMK_COMBO(lbrc,   &kp LBRC,      LT2 LT1,     DEF QWERTY NUM, COMBO_TERM_SLOW)
-ZMK_COMBO(rbrc,   &kp RBRC,      RT1 RT2,     DEF QWERTY NUM, COMBO_TERM_SLOW)
+ZMK_COMBO(lbrc,   &kp LBRC,      LT2 LT1,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(rbrc,   &kp RBRC,      RT1 RT2,     DEF QWERTY NUM, COMBO_TERM_MED)
 
-ZMK_COMBO(lbkt,   &kp LBKT,      LM3 LM2,     DEF QWERTY NUM, COMBO_TERM_SLOW)
-ZMK_COMBO(rbkt,   &kp RBKT,      RM2 RM3,     DEF QWERTY NUM, COMBO_TERM_SLOW)
+ZMK_COMBO(lbkt,   &kp LBKT,      LM3 LM2,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(rbkt,   &kp RBKT,      RM2 RM3,     DEF QWERTY NUM, COMBO_TERM_MED)
 
-ZMK_COMBO(lt,     &kp LT,        LT3 LT2,     DEF QWERTY NUM, COMBO_TERM_SLOW)
-ZMK_COMBO(gt,     &kp GT,        RT2 RT3,     DEF QWERTY NUM, COMBO_TERM_SLOW)
+ZMK_COMBO(lt,     &kp LT,        LT3 LT2,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(gt,     &kp GT,        RT2 RT3,     DEF QWERTY NUM, COMBO_TERM_MED)
 
-ZMK_COMBO(fslh,   &kp FSLH,      RM1 RT2,     DEF QWERTY NUM, COMBO_TERM_SLOW)
-ZMK_COMBO(bslh,   &kp BSLH,      LT2 LM1,     DEF QWERTY NUM, COMBO_TERM_SLOW)
+ZMK_COMBO(fslh,   &kp FSLH,      RM1 RT2,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(bslh,   &kp BSLH,      LT2 LM1,     DEF QWERTY NUM, COMBO_TERM_MED)
 
-ZMK_COMBO(equal,  &kp EQUAL,     RB1 RB2,     DEF QWERTY NUM, COMBO_TERM_SLOW)
+ZMK_COMBO(equal,  &kp EQUAL,     RB1 RB2,     DEF QWERTY NUM, COMBO_TERM_MED)
 
-ZMK_COMBO(undscr, &kp UNDER,     LB2 LB1,     DEF QWERTY NUM, COMBO_TERM_SLOW)
-ZMK_COMBO(dash,   &kp MINUS,     LB3 LB2,     DEF QWERTY NUM, COMBO_TERM_SLOW)
+ZMK_COMBO(undscr, &kp UNDER,     LB2 LB1,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(dash,   &kp MINUS,     LB3 LB2,     DEF QWERTY NUM, COMBO_TERM_MED)
 
 
 /* Keymap */
@@ -187,6 +188,18 @@ ZMK_LAYER(qwerty,
 //                                          ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯                                          
 )
 
+ZMK_LAYER(canary,
+//╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+   ___           &kp W         &kp L         &kp Y         &kp P         &kp B            &kp Z         &kp F         &kp O         &kp U         &kp SQT         ___
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+   ___           &kp C         &kp R         &kp S         &kp T         &kp G            &kp M         &kp N         &kp E         &kp I         &kp A      ___
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+   ___           &kp Q         &kp J         &kp V         &kp D         &kp K            &kp X         &kp H         ___           ___           ___           ___
+//╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
+                                             ___           ___           ___              ___           ___           ___
+//                                          ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯                                          
+)
+
 ZMK_LAYER(nav,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
    ___           ___           ___           ___           ___           ___              &kp PG_UP     ___           NAV_UP        ___           ___           &kp DEL
@@ -203,9 +216,9 @@ ZMK_LAYER(fn,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
    ___           ___           &kp F7        &kp F8        &kp F9        &kp F12          ___           &kp C_PREV    &kp C_VOL_UP  &kp C_NEXT    ___           &tog QWERTY
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-   ___           ___           &kp F4        &kp F5        &kp F6        &kp F11          ___           &kp C_MUTE    &kp C_VOL_DN  &kp C_PP      ___           &kp PSCRN
+   ___           ___           &kp F4        &kp F5        &kp F6        &kp F11          ___           &kp C_MUTE    &kp C_VOL_DN  &kp C_PP      ___           &tog CANARY
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-   ___           ___           &kp F1        &kp F2        &kp F3        &kp F10          ___           ___           ___           ___           ___           &kp RALT
+   ___           ___           &kp F1        &kp F2        &kp F3        &kp F10          ___           &kp PSCRN     ___           ___           ___           &kp RALT
 //╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
                                              ___           ___           ___              ___           ___           ___           
 //                                          ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯                                          
