@@ -1,19 +1,21 @@
 /*                KEY POSITIONS
 
-  ╭─────────────────────╮ ╭─────────────────────╮
-  │ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │
-  │ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 │
-  │ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 │
-  ╰───────╮ LH2 LH1 LH0 │ │ RH0 RH1 RH2 ╭───────╯
-          ╰─────────────╯ ╰─────────────╯ */
+  ╭─────────────────────────╮ ╭─────────────────────────╮
+  │ LT5 LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 RT5 │
+  │ LM5 LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 RM5 │
+  │ LB5 LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 RB5 │
+  ╰───────╮     LH2 LH1 LH0 │ │ RH0 RH1 RH2 ╭───────────╯
+          ╰─────────────────╯ ╰─────────────╯ */
 
 // use require-prior-idle-ms for combos
 #undef COMBO_HOOK
 #define COMBO_HOOK require-prior-idle-ms = <150>;
 
 #define COMBO_TERM_FAST 18
+#define COMBO_TERM_MID 25
 #define COMBO_TERM_SLOW 30
 
+/*
 // make homerow combos tap-only (so HRMs can be chorded instantaneously)
 #define HRC_TAB    &hml         LA(LCTRL) TAB
 #define HRC_REPEAT &hml_repeat  LS(LCTRL) 0
@@ -70,4 +72,24 @@ ZMK_COMBO(under, &kp UNDER,     RM0 RB0,     DEF NAV NUM, COMBO_TERM_SLOW)
 ZMK_COMBO(minus, &kp MINUS,     RM1 RB1,     DEF NAV NUM, COMBO_TERM_SLOW)
 ZMK_COMBO(fslh,  &kp FSLH,      RM2 RB2,     DEF NAV NUM, COMBO_TERM_SLOW)
 ZMK_COMBO(pipe,  &kp PIPE,      RM3 RB3,     DEF NAV NUM, COMBO_TERM_SLOW)
+*/
 
+ZMK_COMBO(lpar,   &kp LPAR,      LM2 LM1,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(rpar,   &kp RPAR,      RM1 RM2,     DEF QWERTY NUM, COMBO_TERM_MED)
+
+ZMK_COMBO(lbrc,   &kp LBRC,      LT2 LT1,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(rbrc,   &kp RBRC,      RT1 RT2,     DEF QWERTY NUM, COMBO_TERM_MED)
+
+ZMK_COMBO(lbkt,   &kp LBKT,      LM3 LM2,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(rbkt,   &kp RBKT,      RM2 RM3,     DEF QWERTY NUM, COMBO_TERM_MED)
+
+ZMK_COMBO(lt,     &kp LT,        LT3 LT2,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(gt,     &kp GT,        RT2 RT3,     DEF QWERTY NUM, COMBO_TERM_MED)
+
+ZMK_COMBO(fslh,   &kp FSLH,      RM1 RT2,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(bslh,   &kp BSLH,      LT2 LM1,     DEF QWERTY NUM, COMBO_TERM_MED)
+
+ZMK_COMBO(equal,  &kp EQUAL,     RB1 RB2,     DEF QWERTY NUM, COMBO_TERM_MED)
+
+ZMK_COMBO(undscr, &kp UNDER,     LB2 LB1,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(dash,   &kp MINUS,     LB3 LB2,     DEF QWERTY NUM, COMBO_TERM_MED)
