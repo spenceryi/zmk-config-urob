@@ -97,7 +97,7 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
 /* Caps-word, num-word and smart-mouse */
 
 // tap: shift | shift + tap: caps-word | hold: shift
-ZMK_BEHAVIOR(smart_shft, mod_morph,
+ZMK_BEHAVIOR(smart_shift, mod_morph,
     bindings = <&kp RSHFT>, <&caps_word>;
     mods = <(MOD_LSFT)>;
 )
