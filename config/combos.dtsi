@@ -15,24 +15,30 @@
 #define COMBO_TERM_MED 25
 #define COMBO_TERM_SLOW 30
 
-ZMK_COMBO(lpar,   &kp LPAR,      LM2 LM1,     DEF QWERTY NUM, COMBO_TERM_MED)
-ZMK_COMBO(rpar,   &kp RPAR,      RM1 RM2,     DEF QWERTY NUM, COMBO_TERM_MED)
+// make homerow combos tap-only (so HRMs can be chorded instantaneously)
+#define HRC_LBKT  &hml         LC(LALT) LBKT
+#define HRC_RBKT  &hmr         LA(LCTRL) RBKT
+#define HRC_LPAR  &hml_lpar_lt LA(LGUI) 0
+#define HRC_RPAR  &hmr_rpar_gt LG(LALT) 0
 
-ZMK_COMBO(lbrc,   &kp LBRC,      LT2 LT1,     DEF QWERTY NUM, COMBO_TERM_MED)
-ZMK_COMBO(rbrc,   &kp RBRC,      RT1 RT2,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(lpar,   &kp HRC_LPAR,      LM2 LM1,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(rpar,   &kp HRC_RPAR,      RM1 RM2,     DEF QWERTY NUM, COMBO_TERM_MED)
 
-ZMK_COMBO(lbkt,   &kp LBKT,      LM3 LM2,     DEF QWERTY NUM, COMBO_TERM_MED)
-ZMK_COMBO(rbkt,   &kp RBKT,      RM2 RM3,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(lbrc,   &kp LBRC,          LT2 LT1,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(rbrc,   &kp RBRC,          RT1 RT2,     DEF QWERTY NUM, COMBO_TERM_MED)
 
-ZMK_COMBO(lt,     &kp LT,        LT3 LT2,     DEF QWERTY NUM, COMBO_TERM_MED)
-ZMK_COMBO(gt,     &kp GT,        RT2 RT3,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(lbkt,   &kp HRC_LBKT,      LM3 LM2,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(rbkt,   &kp HRC_RBKT,      RM2 RM3,     DEF QWERTY NUM, COMBO_TERM_MED)
 
-ZMK_COMBO(fslh,   &kp FSLH,      RM1 RT2,     DEF QWERTY NUM, COMBO_TERM_MED)
-ZMK_COMBO(bslh,   &kp BSLH,      LT2 LM1,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(lt,     &kp LT,            LT3 LT2,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(gt,     &kp GT,            RT2 RT3,     DEF QWERTY NUM, COMBO_TERM_MED)
 
-ZMK_COMBO(equal,  &kp EQUAL,     RB1 RB2,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(fslh,   &kp FSLH,          RM1 RT2,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(bslh,   &kp BSLH,          LT2 LM1,     DEF QWERTY NUM, COMBO_TERM_MED)
 
-ZMK_COMBO(undscr, &kp UNDER,     LB2 LB1,     DEF QWERTY NUM, COMBO_TERM_MED)
-ZMK_COMBO(dash,   &kp MINUS,     LB3 LB2,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(equal,  &kp EQUAL,         RB1 RB2,     DEF QWERTY NUM, COMBO_TERM_MED)
+
+ZMK_COMBO(undscr, &kp UNDER,         LB2 LB1,     DEF QWERTY NUM, COMBO_TERM_MED)
+ZMK_COMBO(dash,   &kp MINUS,         LB3 LB2,     DEF QWERTY NUM, COMBO_TERM_MED)
 
 //ZMK_COMBO(mouse,  &smart_mouse,  LT3 LT1,     DEF QWERTY NUM, COMBO_TERM_MED)

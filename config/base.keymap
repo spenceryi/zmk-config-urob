@@ -63,7 +63,7 @@ MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
-MAKE_HRM(hmr_lpar_lt, &kp, &lpar_lt, KEYS_L THUMBS)    // "    "   "   "
+MAKE_HRM(hml_lpar_lt, &kp, &lpar_lt, KEYS_R THUMBS)    // "    "   "   "
 MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "
 
 /* Nav cluster */
@@ -214,7 +214,7 @@ ZMK_LAYER(base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
    &kp ESC       &kp W         &kp L         &kp Y         &kp P         &kp B            &kp Z         &kp F         &kp O         &kp U         &kp SQT       &kp BSPC
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-   &kp LSHFT     &kp C         &kp R         &kp S         &kp T         &kp G            &kp M         &kp N         &kp E         &kp I         &kp A         &kp RET
+   &kp LSHFT     &hml LSHFT C  &hml LCTRL R  &hml LALT S   &hml LGUI T   &kp G            &kp M         &hmr LGUI N   &hmr LALT E   &hmr LCTRL I  &hmr RSHFT A  &kp RET
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
    &kp LCTRL     &kp Q         &kp J         &kp V         &kp D         &kp K            &kp X         &kp H         &comma_morph  &dot_morph    &qexcl        &kp LALT
 //╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯
